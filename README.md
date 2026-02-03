@@ -1,3 +1,2 @@
-# Pagina-CSS-Lanzada
-Aqui lanzo mi página de CSS en el servidor.
-[Visita mi página](proyectocssalex.netlify.app)
+# Mi Proyecto CSS
+Puedes ver el sitio en vivo aquí: [Proyecto CSS Alex](https://proyectocssalex.netlify.app)
