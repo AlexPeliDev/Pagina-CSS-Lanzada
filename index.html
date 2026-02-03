@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokéCalvos | Ultimate Edition</title>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Poppins:wght@400;600;700;800&family=Orbitron:wght@400;700&display=swap"
+        rel="stylesheet">
+    <!-- Styles -->
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="scrollProgress"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="encabezado" id="inicio">
+        <div class="logo">
+            <img src="imgs/img logo.png" alt="Logo" width="300">
+        </div>
+
+        <nav class="enlaces">
+            <a href="#inicio" class="active"><i class="fa-solid fa-house"></i> Inicio</a>
+            <a href="#galeria"><i class="fa-solid fa-images"></i> Galería</a>
+            <a href="#pokedex"><i class="fa-solid fa-table"></i> Pokedex</a>
+            <a href="#novedades"><i class="fa-solid fa-newspaper"></i> Noticias</a>
+            <a href="#comunidad"><i class="fa-solid fa-users"></i> Comunidad</a>
+        </nav>
+
+        <div class="header-actions">
+            <!-- Search -->
+            <form class="search-form">
+                <div class="input-group">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Buscar Pokémon...">
+                </div>
+            </form>
+            <!-- Login Btn -->
+            <button class="btn-login" onclick="toggleLoginModal()"><i class="fa-solid fa-user-astronaut"></i>
+                Entrar</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-video-bg">
+            <!-- Simulated Video BG with CSS Gradient Animation is in CSS -->
+        </div>
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content skew-fix">
+            <span class="badge-new">¡NUEVA TEMPORADA!</span>
+            <h1 class="glitch" data-text="HAZTE CON TODOS">HAZTE CON TODOS</h1>
+            <p class="hero-subtitle">Únete a la liga <strong>PokéCalvos</strong> y demuestra que eres el mejor maestro
+                del mundo.</p>
+
+            <div class="hero-stats-row">
+                <div class="h-stat">
+                    <span class="count" data-target="890">0</span>
+                    <label>Especies</label>
+                </div>
+                <div class="h-stat">
+                    <span class="count" data-target="15000">0</span>
+                    <label>Entrenadores</label>
+                </div>
+                <div class="h-stat">
+                    <span class="count" data-target="8">0</span>
+                    <label>Regiones</label>
+                </div>
+            </div>
+
+            <div class="hero-btns">
+                <a href="#galeria" class="btn-primary ripple">Explorar Mundo <i class="fa-solid fa-rocket"></i></a>
+                <a href="#pokedex" class="btn-secondary ripple">Ver Datos <i class="fa-solid fa-database"></i></a>
+            </div>
+        </div>
+
+        <div class="scroll-down-indicator">
+            <span>Scroll</span>
+            <i class="fa-solid fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Filter Section -->
+        <section class="filter-section">
+            <div class="filter-container">
+                <button class="filter-btn active" data-filter="all"><i class="fa-solid fa-layer-group"></i>
+                    Todos</button>
+                <button class="filter-btn" data-filter="fire"><i class="fa-solid fa-fire"></i> Fuego</button>
+                <button class="filter-btn" data-filter="water"><i class="fa-solid fa-water"></i> Agua</button>
+                <button class="filter-btn" data-filter="grass"><i class="fa-solid fa-leaf"></i> Planta</button>
+                <button class="filter-btn" data-filter="electric"><i class="fa-solid fa-bolt"></i> Eléctrico</button>
+                <button class="filter-btn" data-filter="psychic"><i class="fa-solid fa-brain"></i> Psíquico</button>
+                <button class="filter-btn" data-filter="legendary"><i class="fa-solid fa-crown"></i>
+                    Legendarios</button>
+            </div>
+        </section>
+
+        <!-- Galeria -->
+        <section id="galeria">
+            <div class="section-title-wrapper">
+                <h2><span class="highlight">Gale</span>ría Elite</h2>
+                <div class="title-line"></div>
+            </div>
+
+            <div class="grid-imagenes">
+                <!-- Cards (Added data-category attributes for filtering) -->
+
+                <!-- Mewtwo -->
+                <article class="poke-card" data-category="psychic legendary">
+                    <span class="card-badge">#150</span>
+                    <div class="poke-img">
+                        <img src="imgs/mewtwo.png" alt="Mewtwo">
+                        <div class="poke-glow" style="background: #a040a0;"></div>
+                    </div>
+                    <div class="poke-info">
+                        <h3>Mewtwo</h3>
+                        <div class="types">
+                            <span class="type psychic">Psíquico</span>
+                        </div>
+                        <button class="btn-card">Ver Stats</button>
+                    </div>
+                </article>
+
+                <!-- Articuno (New!) -->
+                <article class="poke-card" data-category="ice flying legendary">
+                    <span class="card-badge">#144</span>
+                    <div class="poke-img">
+                        <img src="imgs/articuno.png" alt="Articuno">
+                        <div class="poke-glow" style="background: #6890f0;"></div>
+                    </div>
+                    <div class="poke-info">
+                        <h3>Articuno</h3>
+                        <div class="types">
+                            <span class="type ice">Hielo</span>
+                            <span class="type flying">Volador</span>
+                        </div>
+                        <button class="btn-card">Ver Stats</button>
+                    </div>
+                </article>
+
+                <!-- Charizard -->
+                <article class="poke-card" data-category="fire flying">
+                    <span class="card-badge">#006</span>
+                    <div class="poke-img">
+                        <img src="imgs/charizard.png" alt="Charizard">
+                        <div class="poke-glow" style="background: #f08030;"></div>
+                    </div>
+                    <div class="poke-info">
+                        <h3>Charizard</h3>
+                        <div class="types">
+                            <span class="type fire">Fuego</span>
+                            <span class="type flying">Volador</span>
+                        </div>
+                        <button class="btn-card">Ver Stats</button>
+                    </div>
+                </article>
+
+                <!-- Greninja -->
+                <article class="poke-card" data-category="water dark">
+                    <span class="card-badge">#658</span>
+                    <div class="poke-img">
+                        <img src="imgs/greninja.png" alt="Greninja">
+                        <div class="poke-glow" style="background: #6890f0;"></div>
+                    </div>
+                    <div class="poke-info">
+                        <h3>Greninja</h3>
+                        <div class="types">
+                            <span class="type water">Agua</span>
+                            <span class="type dark">Siniestro</span>
+                        </div>
+                        <button class="btn-card">Ver Stats</button>
+                    </div>
+                </article>
+
+                <!-- Gengar -->
+                <article class="poke-card" data-category="ghost poison">
+                    <span class="card-badge">#094</span>
+                    <div class="poke-img">
+                        <img src="imgs/gengar.png" alt="Gengar">
+                        <div class="poke-glow" style="background: #705898;"></div>
+                    </div>
+                    <div class="poke-info">
+                        <h3>Gengar</h3>
+                        <div class="types">
+                            <span class="type ghost">Fantasma</span>
+                            <span class="type poison">Veneno</span>
+                        </div>
+                        <button class="btn-card">Ver Stats</button>
+                    </div>
+                </article>
+
+                <!-- Pikachu -->
+                <article class="poke-card" data-category="electric">
+                    <span class="card-badge">#025</span>
+                    <div class="poke-img">
+                        <img src="imgs/img5.png" alt="Pikachu">
+                        <div class="poke-glow" style="background: #f8d030;"></div>
+                    </div>
+                    <div class="poke-info">
+                        <h3>Pikachu</h3>
+                        <div class="types">
+                            <span class="type electric">Eléctrico</span>
+                        </div>
+                        <button class="btn-card">Ver Stats</button>
+                    </div>
+                </article>
+
+                <!-- Venusaur -->
+                <article class="poke-card" data-category="grass poison">
+                    <span class="card-badge">#003</span>
+                    <div class="poke-img">
+                        <img src="imgs/venusaur.png" alt="Venusaur">
+                        <div class="poke-glow" style="background: #78c850;"></div>
+                    </div>
+                    <div class="poke-info">
+                        <h3>Venusaur</h3>
+                        <div class="types">
+                            <span class="type grass">Planta</span>
+                            <span class="type poison">Veneno</span>
+                        </div>
+                        <button class="btn-card">Ver Stats</button>
+                    </div>
+                </article>
+
+                <!-- Incineroar -->
+                <article class="poke-card" data-category="fire dark">
+                    <span class="card-badge">#727</span>
+                    <div class="poke-img">
+                        <img src="imgs/incineroar.png" alt="Incineroar">
+                        <div class="poke-glow" style="background: #f08030;"></div>
+                    </div>
+                    <div class="poke-info">
+                        <h3>Incineroar</h3>
+                        <div class="types">
+                            <span class="type fire">Fuego</span>
+                            <span class="type dark">Siniestro</span>
+                        </div>
+                        <button class="btn-card">Ver Stats</button>
+                    </div>
+                </article>
+
+                <!-- Gardevoir -->
+                <article class="poke-card" data-category="psychic fairy">
+                    <span class="card-badge">#282</span>
+                    <div class="poke-img">
+                        <img src="imgs/gardevoir2.png" alt="Gardevoir">
+                        <div class="poke-glow" style="background: #f85888;"></div>
+                    </div>
+                    <div class="poke-info">
+                        <h3>Gardevoir</h3>
+                        <div class="types">
+                            <span class="type psychic">Psíquico</span>
+                            <span class="type fairy">Hada</span>
+                        </div>
+                        <button class="btn-card">Ver Stats</button>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Featurette: Type Matchups (Interactive-looking) -->
+        <section class="banner-parallax">
+            <div class="parallax-content">
+                <h2>¿Listo para combatir?</h2>
+                <p>Aprende la tabla de tipos y domina el campo de batalla.</p>
+                <button class="btn-outline">Ver Tabla de Tipos</button>
+            </div>
+        </section>
+
+        <!-- Pokedex Table -->
+        <section id="pokedex">
+            <div class="section-title-wrapper">
+                <h2><span class="highlight">Base</span> de Datos</h2>
+                <div class="title-line"></div>
+            </div>
+
+            <!-- Table Controls -->
+            <div class="table-controls">
+                <div class="entries-per-page">
+                    Mostrar
+                    <select>
+                        <option>10</option>
+                        <option>25</option>
+                        <option>50</option>
+                    </select>
+                </div>
+                <div class="table-search">
+                    <input type="text" placeholder="Filtrar tabla...">
+                </div>
+            </div>
+
+            <div class="scroll-tabla fancy-scrollbar">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Pokémon</th>
+                            <th>Tipos</th>
+                            <th>Habilidad</th>
+                            <th>HP</th>
+                            <th>ATK</th>
+                            <th>DEF</th>
+                            <th>Velocidad</th>
+                            <th>Sprite</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>003</td>
+                            <td class="fw-bold">Venusaur</td>
+                            <td><span class="type-mini grass"></span> <span class="type-mini poison"></span></td>
+                            <td>Espesura</td>
+                            <td>80</td>
+                            <td>82</td>
+                            <td>83</td>
+                            <td>
+                                <div class="progress">
+                                    <div class="fill" style="width: 80%"></div>
+                                </div>
+                            </td>
+                            <td><img src="imgs/venusaur.png" class="table-sprite" alt="Venusaur"></td>
+                        </tr>
+                        <tr>
+                            <td>025</td>
+                            <td class="fw-bold">Pikachu</td>
+                            <td><span class="type-mini electric"></span></td>
+                            <td>Estática</td>
+                            <td>35</td>
+                            <td>55</td>
+                            <td>40</td>
+                            <td>
+                                <div class="progress">
+                                    <div class="fill" style="width: 90%"></div>
+                                </div>
+                            </td>
+                            <td><img src="imgs/img5.png" class="table-sprite" alt="Pikachu"></td>
+                        </tr>
+                        <tr>
+                            <td>006</td>
+                            <td class="fw-bold">Charizard</td>
+                            <td><span class="type-mini fire"></span> <span class="type-mini flying"></span></td>
+                            <td>Mar Llamas</td>
+                            <td>78</td>
+                            <td>84</td>
+                            <td>78</td>
+                            <td>
+                                <div class="progress">
+                                    <div class="fill" style="width: 100%"></div>
+                                </div>
+                            </td>
+                            <td><img src="imgs/charizard.png" class="table-sprite" alt="Charizard"></td>
+                        </tr>
+                        <tr>
+                            <td>094</td>
+                            <td class="fw-bold">Gengar</td>
+                            <td><span class="type-mini ghost"></span></td>
+                            <td>Cuerpo Maldito</td>
+                            <td>60</td>
+                            <td>65</td>
+                            <td>60</td>
+                            <td>
+                                <div class="progress">
+                                    <div class="fill" style="width: 110%; background: purple"></div>
+                                </div>
+                            </td>
+                            <td><img src="imgs/gengar.png" class="table-sprite" alt="Gengar"></td>
+                        </tr>
+                        <tr>
+                            <td>150</td>
+                            <td class="fw-bold">Mewtwo</td>
+                            <td><span class="type-mini psychic"></span></td>
+                            <td>Presión</td>
+                            <td>106</td>
+                            <td>110</td>
+                            <td>90</td>
+                            <td>
+                                <div class="progress">
+                                    <div class="fill" style="width: 130%; background: #ff50a0"></div>
+                                </div>
+                            </td>
+                            <td><img src="imgs/mewtwo.png" class="table-sprite" alt="Mewtwo"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="pagination">
+                <button disabled>&laquo;</button>
+                <button class="active">1</button>
+                <button>2</button>
+                <button>3</button>
+                <button>&raquo;</button>
+            </div>
+        </section>
+
+        <!-- News Section (New!) -->
+        <section id="novedades" class="section-news">
+            <div class="section-title-wrapper">
+                <h2><span class="highlight">Últi</span>mas Noticias</h2>
+                <div class="title-line"></div>
+            </div>
+
+            <div class="news-grid">
+                <div class="news-card">
+                    <div class="news-date">10 FEB, 2026</div>
+                    <h3>Descubierto nuevo tipo cósmico</h3>
+                    <p>Los astrónomos han detectado señales de radio extrañas que sugieren la llegada de Deoxys...</p>
+                    <a href="#" class="read-more">Leer más &rarr;</a>
+                </div>
+                <div class="news-card">
+                    <div class="news-date">08 FEB, 2026</div>
+                    <h3>Campeonato Regional 2026</h3>
+                    <p>Las inscripciones para la liga Master Ball están abiertas. ¡Prepara tu equipo!</p>
+                    <a href="#" class="read-more">Leer más &rarr;</a>
+                </div>
+                <div class="news-card">
+                    <div class="news-date">01 FEB, 2026</div>
+                    <h3>Día de la Comunidad: Pikachu</h3>
+                    <p>Aparecerán más pikachus salvajes con el movimiento exclusivo "Surf".</p>
+                    <a href="#" class="read-more">Leer más &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials (Community) -->
+        <section id="comunidad" class="section-testimonials">
+            <div class="testimonial-header">
+                <h2>Lo que dicen los entrenadores</h2>
+            </div>
+            <div class="testimonial-slider">
+                <div class="testimonial-card">
+                    <div class="avatar"><i class="fa-solid fa-user"></i></div>
+                    <p>"La mejor base de datos que he encontrado. Me ayudó a capturar a Mewtwo."</p>
+                    <h4>Ash K.</h4>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="avatar"><i class="fa-solid fa-user-ninja"></i></div>
+                    <p>"Diseño increíble y muy rápido. ¡Recomendado!"</p>
+                    <h4>Misty W.</h4>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="avatar"><i class="fa-solid fa-user-secret"></i></div>
+                    <p>"Necesitamos más info sobre tipos acero, pero por lo demás genial."</p>
+                    <h4>Brock T.</h4>
+                    <div class="stars">⭐⭐⭐⭐</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter -->
+        <section class="newsletter-cta">
+            <div class="newsletter-content">
+                <h2><i class="fa-regular fa-paper-plane"></i> Boletín Semanal</h2>
+                <p>Recibe trucos, guías y noticias exclusivas directamente en tu SmartRotom.</p>
+                <form>
+                    <input type="email" placeholder="Tu correo electrónico...">
+                    <button type="submit">Suscribirse</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>PokéCalvos</h3>
+                <p>Hecho con <i class="fa-solid fa-heart" style="color:red"></i> para fans de Pokemon. Esta es una web
+                    no oficial hecha con fines educativos.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Explorar</h3>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Top Tier</a></li>
+                    <li><a href="#">Guías</a></li>
+                    <li><a href="#">Foro</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="#">Privacidad</a></li>
+                    <li><a href="#">Términos</a></li>
+                    <li><a href="#">Cookies</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contacto</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-discord"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 PokéCalvos Inc. | Ver. 3.0 Ultimate</p>
+        </div>
+    </footer>
+
+    <!-- FAB: Scroll To Top -->
+    <button id="scrollToTopBtn" title="Ir arriba"><i class="fa-solid fa-arrow-up"></i></button>
+
+    <!-- Scripts -->
+    <script src="main.js"></script>
+</body>
+
+</html>
